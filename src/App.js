@@ -1,40 +1,50 @@
 import React from 'react';
-import { Cards, Chart, CountryPicker } from './components'; 
+import { NavBar, SlideView } from './components'; 
 import styles from './App.module.css';
-import { fetchData } from './api'; 
-import coronaImage from './images/image.png';
+import { Typography, Button } from '@material-ui/core';
+import { title, author, forSlides, againstSlides } from './api/should_college_be_free_store.js'
+
 
 class App extends React.Component {
-    state = {
-        data: {},
-        country: '',
-    }
-
-    async componentDidMount() {
-        const fetchedData = await fetchData(); 
-
-        this.setState( { data: fetchedData } ); 
-    }
     
-    handleCountryChange = async(country) => {
-        // Fetch data
-        const fetchedData = await fetchData(country); 
+    state = {
+        title,
+        forSlides,
+        againstSlides,
+        isFirstView: true,
+    }
 
-        // Set state
-        this.setState( { data: fetchedData, country: country } ); 
+    handleClick() {
+        this.setState(state => ({
+            isFirstView: !state.isFirstView
+          }));
     }
 
     render() {
-        // Destructure, i.e. take data out of this.state, and pass into Cards as props instead of doing data="this.state.data" in Cards props tag
-        const { data, country } = this.state; 
 
         return (
-            <div className={styles.container}>
-                <img className={styles.image} src={coronaImage} alt="COVID-19"/>
-                <Cards data={data}/>
-                <CountryPicker handleCountryChange={this.handleCountryChange} />
-                <Chart data={data} country={country}/>
+        <div>
+            <div className={styles.navbar}>
+                <NavBar />
             </div>
+
+            <div className={styles.container}>
+                <Typography variant="h4">{title}</Typography>
+                <Typography variant="body2">{author}</Typography>
+                <br /><br />
+                <Button onClick={() => this.handleClick()}>
+                    Change my view
+                </Button>
+            </div>
+
+
+            <div>
+                <SlideView 
+                    slides={this.state.isFirstView ? forSlides : againstSlides} 
+                />
+            </div>
+
+        </div>
         );
     }
 }
