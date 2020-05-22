@@ -32,8 +32,8 @@ class App extends React.Component {
                 <Typography variant="h4">{title}</Typography>
                 <Typography variant="body2">{author}</Typography>
                 <br /><br />
-                <Button onClick={() => this.handleClick()}>
-                    Change my view
+                <Button variant="outlined" color="default" onClick={() => this.handleClick()}>
+                    CLICK TO CHANGE VIEW
                 </Button>
             </div>
 
