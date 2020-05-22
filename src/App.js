@@ -29,7 +29,7 @@ class App extends React.Component {
             </div>
 
             <div className={styles.container}>
-                <Typography variant="h4">{title}</Typography>
+                <Typography variant="h6">{title}</Typography>
                 <Typography variant="body2">{author}</Typography>
                 <br />
                 <Button variant="outlined" color="default" onClick={() => this.handleClick()}>
