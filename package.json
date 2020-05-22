@@ -2,7 +2,7 @@
   "name": "60s_d1",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://uzbhutta.github.io/60s_d1/",
+  "homepage": "http://uzbhutta.github.io/60s_d1",
   "dependencies": {
     "@material-ui/core": "^4.9.13",
     "@testing-library/jest-dom": "^4.2.4",
