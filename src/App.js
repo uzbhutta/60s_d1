@@ -31,7 +31,7 @@ class App extends React.Component {
             <div className={styles.container}>
                 <Typography variant="h4">{title}</Typography>
                 <Typography variant="body2">{author}</Typography>
-                <br /><br />
+                <br />
                 <Button variant="outlined" color="default" onClick={() => this.handleClick()}>
                     CLICK TO CHANGE VIEW
                 </Button>
