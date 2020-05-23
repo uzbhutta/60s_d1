@@ -2,13 +2,13 @@ import React from 'react';
 import { NavBar, SlideView } from './components'; 
 import styles from './App.module.css';
 import { Typography, Button } from '@material-ui/core';
-import { title, author, forSlides, againstSlides } from './api/should_college_be_free_store.js'
+import { article, author, forSlides, againstSlides } from './api/should_college_be_free_store.js'
 
 
 class App extends React.Component {
     
     state = {
-        title,
+        article,
         forSlides,
         againstSlides,
         isFirstView: true,
@@ -29,7 +29,7 @@ class App extends React.Component {
             </div>
 
             <div className={styles.container}>
-                <Typography variant="h5">{title}</Typography>
+                <Typography variant="h5">{article}</Typography>
                 <Typography variant="body2">{author}</Typography>
                 <br />
                 <Button variant="outlined" color="default" onClick={() => this.handleClick()}>

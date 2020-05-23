@@ -16,8 +16,8 @@ export default function SlideView( {slides} ) {
             <Slider speed={500} slidesToShow={1} slidesToScroll={1} infinite={false} dots={true}>
 
 
-                {slides.map(info =>
-                    <Card info={info} />
+                {slides.map(metadata =>
+                    <Card metadata={metadata} />
                 )}
 
             </Slider>
